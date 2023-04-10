@@ -37,13 +37,13 @@ const Dictaphone = () => {
   return (
     <div>
 
-      <div className="flex items-center justify-center min-h-screen">
+      <div className={`text-${color} flex items-center justify-center min-h-screen  before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]`}>
         <button
-          className={`flex items-center justify-center focus:outline-none bg-transparent border w-40 h-40 lg:w-44 lg:h-44 border-gray-400 rounded-full text-${color}`}
+          className={`z-10 flex items-center justify-center focus:outline-none bg-transparent border w-40 h-40 lg:w-44 lg:h-44 border-gray-400 rounded-full text-${color}`}
           onMouseDown={() => { handleMouseDown(); SpeechRecognition.startListening(); }}
           onMouseUp={() => { handleMouseUp(); SpeechRecognition.stopListening(); }}
         >
-          <MicrophoneIcon className={`w-3/4 text-${color}-500`} />
+          <MicrophoneIcon className={`w-3/4 text-${color}`} />
         </button>
       </div>
       <div className="flex items-center border-b border-teal-500 py-2">
