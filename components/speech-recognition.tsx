@@ -10,7 +10,7 @@ import {
 
 const Dictaphone = () => {
   const [isPressed, setIsPressed] = useState(false);
-  const [speechRecognitionSupported, setSpeechRecognitionSupported] = useState(null) // null or boolean
+  const [speechRecognitionSupported, setSpeechRecognitionSupported] = useState<boolean>(false) // null or boolean
   const {
     transcript,
     listening,
@@ -18,8 +18,7 @@ const Dictaphone = () => {
     browserSupportsSpeechRecognition
   } = useSpeechRecognition()
   useEffect(() => {
-    // sets to true or false after component has been mounted
-    setSpeechRecognitionSupported(browserSupportsSpeechRecognition)
+    setSpeechRecognitionSupported(browserSupportsSpeechRecognition) // sets to true or false after component has been mounted
   }, [browserSupportsSpeechRecognition])
   if (speechRecognitionSupported === null) return null // return null on first render, can be a loading indicator
   if (!speechRecognitionSupported) {
